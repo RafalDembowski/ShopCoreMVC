@@ -1,0 +1,20 @@
+﻿@model ProductListViewModel
+@{
+    ViewData["Title"] = "ListOfProducts";
+}
+
+    <h1>@Model.CurrentCategory</h1>
+
+    <div class="card-deck">
+        @foreach (var product in Model.Products)
+        {
+            <div class="card">
+                <img class="card-img-top" src="@product.ImageThumbnailUrl" alt="zdjecie produktu">
+                <div class="card-body">
+                    <h5 class="card-title">@product.Name</h5>
+                    <h6>@product.Price.ToString("c")</h6>
+                    <p class="card-text">@product.ShortDescription</p>
+                </div>
+            </div>
+        }
+    </div>
